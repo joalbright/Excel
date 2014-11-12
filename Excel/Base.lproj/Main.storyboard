@@ -19,11 +19,11 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bnK-At-cBo">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pfr-Uz-iOe">
-                                        <rect key="frame" x="0.0" y="0.0" width="3000" height="600"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pfr-Uz-iOe">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="3000" id="Uz5-Jv-dnA"/>
+                                            <constraint firstAttribute="width" constant="600" id="AxK-3Q-kqD"/>
                                         </constraints>
                                         <prototypes>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="100" id="1nd-vv-Ue4">
@@ -34,47 +34,26 @@
                                                 </tableViewCellContentView>
                                             </tableViewCell>
                                         </prototypes>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="Uz5-Jv-dnA"/>
-                                            </mask>
-                                        </variation>
                                     </tableView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="pfr-Uz-iOe" secondAttribute="bottom" id="XzJ-Ti-GTe"/>
-                                    <constraint firstItem="pfr-Uz-iOe" firstAttribute="top" secondItem="bnK-At-cBo" secondAttribute="top" id="grS-NC-ZMr"/>
-                                    <constraint firstItem="pfr-Uz-iOe" firstAttribute="leading" secondItem="bnK-At-cBo" secondAttribute="leading" id="rEn-qh-71N"/>
+                                    <constraint firstItem="pfr-Uz-iOe" firstAttribute="leading" secondItem="bnK-At-cBo" secondAttribute="leading" id="RGr-nB-x4T"/>
+                                    <constraint firstAttribute="bottom" secondItem="pfr-Uz-iOe" secondAttribute="bottom" id="oNs-IO-51S"/>
+                                    <constraint firstItem="pfr-Uz-iOe" firstAttribute="top" secondItem="bnK-At-cBo" secondAttribute="top" id="vT0-0O-acl"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="XzJ-Ti-GTe"/>
-                                        <exclude reference="grS-NC-ZMr"/>
-                                        <exclude reference="rEn-qh-71N"/>
-                                    </mask>
-                                </variation>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="bnK-At-cBo" secondAttribute="trailing" id="7Vc-VK-FmI"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="bnK-At-cBo" secondAttribute="bottom" id="AKU-Uh-z8e"/>
-                            <constraint firstAttribute="bottom" secondItem="bnK-At-cBo" secondAttribute="bottom" id="BTm-rb-yfp"/>
-                            <constraint firstItem="bnK-At-cBo" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="cD6-he-vgk"/>
-                            <constraint firstItem="bnK-At-cBo" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="sjd-mE-R8P"/>
+                            <constraint firstAttribute="trailing" secondItem="bnK-At-cBo" secondAttribute="trailing" id="PB3-yz-Ecx"/>
+                            <constraint firstItem="bnK-At-cBo" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="RYL-6p-NlY"/>
+                            <constraint firstItem="bnK-At-cBo" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="TWy-mL-qZf"/>
+                            <constraint firstAttribute="bottom" secondItem="bnK-At-cBo" secondAttribute="bottom" id="iLE-pR-VwD"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="7Vc-VK-FmI"/>
-                                <exclude reference="BTm-rb-yfp"/>
-                                <exclude reference="cD6-he-vgk"/>
-                                <exclude reference="sjd-mE-R8P"/>
-                                <exclude reference="AKU-Uh-z8e"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="scrollView" destination="bnK-At-cBo" id="eUf-Tu-awb"/>
+                        <outlet property="tableVIewWidth" destination="AxK-3Q-kqD" id="1f0-LD-qRn"/>
                         <outlet property="tableView" destination="pfr-Uz-iOe" id="pyB-Vl-YPX"/>
                     </connections>
                 </viewController>

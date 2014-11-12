@@ -10,6 +10,10 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var tableVIewWidth: NSLayoutConstraint!
+    
+    var colCount = 20
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -23,9 +27,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
         tableView.delegate = self
         tableView.dataSource = self
-        
-        scrollView.contentSize = CGSizeMake(3000, scrollView.frame.height)
 
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        tableVIewWidth.constant = CGFloat(colCount) * 200
+        scrollView.contentSize = CGSizeMake(CGFloat(colCount) * 200, scrollView.frame.height)
+        
+        tableView.setNeedsLayout()
+        tableView.layoutIfNeeded()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,9 +58,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         var cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
         
         let w = 200
-        let cols = 3000 / 200
         
-        for i in 0..<cols {
+        for i in 0..<colCount {
             
             var box = UIView(frame: CGRectMake(CGFloat(i) * 200, 0, 200, 100))
             box.backgroundColor = UIColor(white: CGFloat(arc4random_uniform(100)) / 100, alpha: 1.0)
